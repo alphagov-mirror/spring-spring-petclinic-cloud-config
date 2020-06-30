@@ -12,7 +12,17 @@ spring:
     baseUrl: http://tracing-server:9411
 server:
   port: 8081
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      uri: ${vcap.services.config-service.credentials.uri}
+  application:
+    name: customers-service
+  eureka:
+    instance:
+      hostname: ${vcap.application.uris[0]}
+    client:
+      service-url:
+        defaultZone: ${vcap.services.discovery-service.credentials.uri}
