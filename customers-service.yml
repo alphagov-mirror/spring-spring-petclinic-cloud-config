@@ -12,15 +12,4 @@ spring:
     baseUrl: http://tracing-server:9411
 server:
   port: 8081
----
-spring:
-  profiles: cloud
-  application:
-    name: customers-service
-    
-eureka:
-  instance:
-    hostname: ${vcap.application.uris[0]}
-  client:
-    service-url:
-      defaultZone: ${vcap.services.discovery-server-si.credentials.uri}
+  
