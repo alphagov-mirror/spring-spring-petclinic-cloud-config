@@ -1,1 +1,14 @@
+spring:
+  profiles: cloud
+  application:
+    name: customers-service
+  datasource:
+    initialization-mode: always
+    
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+  client:
+    service-url:
+      defaultZone: ${vcap.services.discovery-server-si.credentials.uri}
 
