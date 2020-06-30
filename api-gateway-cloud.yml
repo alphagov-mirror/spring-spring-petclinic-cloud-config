@@ -5,6 +5,8 @@ spring:
     
 eureka:
   instance:
+    nonSecurePort: 80
+    securePort: 443
     hostname: ${vcap.application.uris[0]}
   client:
     service-url:
