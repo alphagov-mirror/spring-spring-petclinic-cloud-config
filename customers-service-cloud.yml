@@ -2,8 +2,6 @@ spring:
   profiles: cloud
   application:
     name: customers-service
-  datasource:
-    initialization-mode: always
     
 eureka:
   instance:
