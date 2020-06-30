@@ -1,0 +1,11 @@
+spring:
+  profiles: cloud
+  application:
+    name: visits-service
+    
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+  client:
+    service-url:
+      defaultZone: ${vcap.services.discovery-server-si.credentials.uri}
